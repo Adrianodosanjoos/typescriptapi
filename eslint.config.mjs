@@ -9,4 +9,31 @@ export default [
   {languageOptions: { globals: globals.node }},
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+
+
+  "rules", {
+  "prettier/prettier": "warn",
+  "no-useless-constructor": "off",
+  "@typescript-eslint/on-unused-vars": "off",
+  "import-helpers/order-imports": [
+    "warn",
+    {
+      "newlinesBetween": "always",
+      "groups": [
+            "/^node:*/",
+            "module",
+            [
+              "parents",
+              "sibling",
+              "index"
+            ] 
+      ],
+      "alphabetize": {
+        "order": "asc",
+        "ignoreCase":true
+      }
+    }
+  ]
+}
 ];
+
